@@ -10,24 +10,160 @@
     <div class="container">
         <nav>
             <a href="#" class="logo">Adidas</a>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <svg viewBox="0 0 100 80" width="25" height="25" fill="white">
+                    <rect width="100" height="15" rx="8"></rect>
+                    <rect y="30" width="100" height="15" rx="8"></rect>
+                    <rect y="60" width="100" height="15" rx="8"></rect>
+                </svg>
+            </label>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Kids</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
 
-        <div class="content">
+        <section id="home" class="content">
             <div class="text">
                 <h2>Adidas Syria, <br>Running Shoes</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus unde earum, sit totam recusandae quae!</p>
+                <a href="#" class="btn">Shop Now</a>
             </div>
 
             <div class="image">
                 <img src="shoes.png" alt="Shoes">
             </div>
-        </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <h3>Lightweight</h3>
+                <p>Designed for maximum speed and agility.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3>High Durability</h3>
+                <p>Built to withstand the toughest conditions.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                </div>
+                <h3>Ultimate Comfort</h3>
+                <p>Boost technology for long-lasting comfort.</p>
+            </div>
+        </section>
+        
+        <section id="products" class="products-section">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="shoes.png" alt="Adidas Ultraboost">
+                    <h3>Adidas Ultraboost 22</h3>
+                    <p class="price">$180</p>
+                    <a href="#" class="btn-small">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="shoes.png" alt="Adidas NMD">
+                    <h3>Adidas NMD_R1</h3>
+                    <p class="price">$140</p>
+                    <a href="#" class="btn-small">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="shoes.png" alt="Adidas Superstar">
+                    <h3>Adidas Superstar</h3>
+                    <p class="price">$100</p>
+                    <a href="#" class="btn-small">Add to Cart</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-arrivals" class="new-arrivals">
+            <div class="arrival-content">
+                <h2>New Collection<br><span>Drop 2026</span></h2>
+                <p>Discover the latest innovations in sportswear.</p>
+                <a href="#products" class="btn">Explore Now</a>
+            </div>
+            <div class="arrival-image">
+                <img src="shoes.png" alt="New Arrival Shoe">
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-image">
+                <img src="shoes.png" alt="About Adidas">
+            </div>
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Adidas is more than just sportswear. We are a community of athletes, creators, and innovators. Our mission is to be the best sports brand in the world, designing, building, and selling the best sports products in the world, with the best service and experience.</p>
+                <p>Through sport, we have the power to change lives.</p>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The best running shoes I have ever owned. The comfort is unmatched and they look amazing!"</p>
+                    <h4>- Ahmad K.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Amazing quality and fast delivery. Adidas never disappoints."</p>
+                    <h4>- Sarah M.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"Very lightweight and great for daily use. I highly recommend them to anyone."</p>
+                    <h4>- Omar T.</h4>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Adidas</h2>
+                    <p>Performance meets style.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest updates and offers.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Adidas Syria. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
