@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,21 +21,22 @@ body {
     z-index: 0;
 }
 
-/* الدائرة في وضع الكمبيوتر */
+/* الدائرة المنتصفة والخلفية */
 body::after {
     content: "";
     width: 100%;
     height: 100%;
-    background: red;
+    background: linear-gradient(135deg, #e80202, #a60000);
     position: absolute;
     clip-path: circle(40% at right 70%);
+    /* الوضع الافتراضي للشاشات الكبيرة */
     z-index: -1;
     transition: 0.5s ease-in-out;
 }
 
 .container {
     width: 90%;
-    min-height: 85vh;
+    margin: 40px auto;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 20px;
@@ -75,16 +80,25 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #e80202;
+    color: #fdfbf7;
+}
+
+nav .menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+#click {
+    display: none;
 }
 
 .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
     width: 90%;
-    margin: 0 auto;
+    margin: 60px auto;
+    min-height: 60vh;
 }
 
 .content .text {
@@ -96,6 +110,7 @@ nav ul li a:hover {
     font-size: clamp(30px, 5vw, 50px);
     text-transform: uppercase;
     line-height: 1.1;
+    color: #fdfbf7;
 }
 
 .content .text p {
@@ -114,7 +129,424 @@ nav ul li a:hover {
     width: 100%;
     max-width: 450px;
     /* تأثير ظل لجعل الحذاء يبدو واقعياً */
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8));
+    animation: slideInRight 1s ease forwards;
+    opacity: 0;
+}
+
+.content .text {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fdfbf7;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(253, 251, 247, 0.2);
+}
+
+.btn:hover {
+    background: white;
+    color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(253, 251, 247, 0.4);
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 40px auto 0;
+    text-align: center;
+    color: white;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards 0.3s;
+}
+
+.feature-item .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    color: #fdfbf7;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.feature-item:hover .icon {
+    background: #fdfbf7;
+    color: #111;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(253, 251, 247, 0.3);
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fdfbf7;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- Products Section --- */
+.products-section {
+    width: 90%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.section-title {
+    color: #fdfbf7;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(253, 251, 247, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+    transition: 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05) rotate(-5deg);
+}
+
+.product-card h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    color: #fdfbf7;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fdfbf7;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid #fdfbf7;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background: #fdfbf7;
+    color: #111;
+}
+
+/* --- New Arrivals Section --- */
+.new-arrivals {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 80px auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.arrival-content {
+    width: 50%;
+}
+
+.arrival-content h2 {
+    color: white;
+    font-size: clamp(28px, 4vw, 40px);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.arrival-content h2 span {
+    color: #fdfbf7;
+}
+
+.arrival-content p {
+    color: #ccc;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.arrival-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.arrival-image img {
+    width: 100%;
+    max-width: 400px;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* --- About Section --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 80px auto;
+}
+
+.about-image {
+    width: 45%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(30%) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+.about-text {
+    width: 50%;
+    color: white;
+}
+
+.about-text h2 {
+    color: #fdfbf7;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    width: 90%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(253, 251, 247, 0.2);
+}
+
+.testimonial-card .stars {
+    color: #fdfbf7;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+    color: white;
+    font-size: 16px;
+}
+
+/* --- Footer Section --- */
+.footer {
+    width: 90%;
+    margin: 60px auto 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px 40px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+}
+
+.footer-logo h2 {
+    color: #fdfbf7;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #aaa;
+}
+
+.footer-links h3,
+.footer-newsletter h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fdfbf7;
+    padding-left: 5px;
+}
+
+.footer-newsletter p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-newsletter input {
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+
+.footer-newsletter input::placeholder {
+    color: #888;
+}
+
+.footer-newsletter .btn {
+    margin-top: 0;
+    width: fit-content;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
 }
 
 /* --- تعديلات الشاشات المتوسطة والجوال --- */
@@ -141,13 +573,72 @@ nav ul li a:hover {
     }
 
     nav {
-        flex-direction: column;
-        gap: 15px;
+        position: relative;
     }
 
-    /* تحريك الدائرة لتصبح خلف الحذاء في الجوال */
+    nav .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        height: max-content;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 15px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.3s;
+        z-index: 10;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    #click:checked~ul {
+        right: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .products-section {
+        margin: 40px auto;
+    }
+
+    .new-arrivals,
+    .about-section,
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 30px 20px;
+    }
+
+    .footer-newsletter form {
+        align-items: center;
+    }
+
+    .arrival-content,
+    .arrival-image,
+    .about-image,
+    .about-text {
+        width: 100%;
+    }
+
+    /* إخفاء الدائرة الخلفية كلياً في الجوال */
     body::after {
-        clip-path: circle(30% at center 82%);
+        display: none;
     }
 }
 
@@ -165,8 +656,5 @@ nav ul li a:hover {
         font-size: 14px;
     }
 
-    /* ضبط أدق للدائرة في الجوالات الصغيرة جداً */
-    body::after {
-        clip-path: circle(35% at center 85%);
-    }
+    /* لا حاجة لتعديل الدائرة هنا بعد إخفائها */
 }
